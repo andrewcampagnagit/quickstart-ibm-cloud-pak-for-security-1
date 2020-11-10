@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>Example Product Name on the AWS Cloud</title>
+<title>IBM Cloud Pak for Security on the AWS Cloud</title>
 <style>
 
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -790,7 +790,7 @@ p.footer-text a{color:#d7d8d8}
 <div id="toctitle"></div>
 <ul class="sectlevel1">
 <li><a href="#_overview">Overview</a></li>
-<li><a href="#_example_product_name_on_aws">Example Product Name on AWS</a></li>
+<li><a href="#_ibm_cloud_pak_for_security_on_aws">IBM Cloud Pak for Security on AWS</a></li>
 <li><a href="#_cost">Cost</a></li>
 <li><a href="#_software_licenses">Software licenses</a></li>
 <li><a href="#_architecture">Architecture</a></li>
@@ -805,17 +805,27 @@ p.footer-text a{color:#d7d8d8}
 <ul class="sectlevel2">
 <li><a href="#_sign_in_to_your_aws_account">Sign in to your AWS account</a></li>
 <li><a href="#_launch_the_quick_start">Launch the Quick Start</a></li>
+</ul>
+</li>
+<li><a href="#_create_dns_record">Create DNS record</a></li>
+<li><a href="#_test_the_deployment">Test the deployment</a></li>
+<li><a href="#_post_deployment_steps">Post deployment steps</a></li>
+<li><a href="#_security">Security</a></li>
+<li><a href="#_other_useful_information">Other useful information</a></li>
+<li><a href="#_faq">FAQ</a></li>
+<li><a href="#_troubleshooting">Troubleshooting</a>
+<ul class="sectlevel2">
+<li><a href="#_installation_of_the_product">Installation of the product</a></li>
+<li><a href="#_logs">Logs</a></li>
+<li><a href="#_logging_into_the_cloud_pak_for_security_console">Logging into the Cloud Pak for Security console</a></li>
+</ul>
+</li>
+<li><a href="#_parameter_reference">Parameter reference</a>
+<ul class="sectlevel2">
 <li><a href="#_parameters_for_deploying_into_a_new_vpc">Parameters for deploying into a new VPC</a></li>
 <li><a href="#_parameters_for_deploying_into_an_existing_vpc">Parameters for deploying into an existing VPC</a></li>
 </ul>
 </li>
-<li><a href="#_test_the_deployment">Test the deployment</a></li>
-<li><a href="#_post_deployment_steps">Post deployment steps</a></li>
-<li><a href="#_best_practices_for_using_example_product_name_on_aws">Best practices for using Example Product Name on AWS</a></li>
-<li><a href="#_security">Security</a></li>
-<li><a href="#_other_useful_information">Other useful information</a></li>
-<li><a href="#_faq">FAQ</a></li>
-<li><a href="#_troubleshooting">Troubleshooting</a></li>
 <li><a href="#_send_us_feedback">Send us feedback</a></li>
 <li><a href="#_quick_start_reference_deployments">Quick Start reference deployments</a></li>
 <li><a href="#_github_repository">GitHub repository</a></li>
@@ -826,7 +836,7 @@ p.footer-text a{color:#d7d8d8}
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<h2 id="_example_product_name_on_the_aws_cloud" class="discrete text-center">Example Product Name on the AWS Cloud</h2>
+<h2 id="_ibm_cloud_pak_for_security_on_the_aws_cloud" class="discrete text-center">IBM Cloud Pak for Security on the AWS Cloud</h2>
 <h2 id="_quick_start_reference_deployment" class="discrete text-left text-center">Quick Start Reference Deployment</h2>
 <div class="imageblock text-center">
 <div class="content">
@@ -834,9 +844,9 @@ p.footer-text a{color:#d7d8d8}
 </div>
 </div>
 <div class="paragraph text-center">
-<p><strong>May 2020</strong><br>
-<em>John Doe and Jane Doe - Example Company Name, Ltd.</em><br>
-<em>Jim Smith - AWS Global Partner SA, AWS + Joe Jones - Technical Product Manager, AWS</em></p>
+<p><strong>October 2020</strong><br>
+<em>Tudor Chiribes, Andrew Campagna, Tyler Stendara, and Nir Carmel - IBM</em><br>
+<em>Vinod Shukla and Jim McConnell, AWS Quick Start team</em></p>
 </div>
 <div class="admonitionblock tip text-left">
 <table>
@@ -852,7 +862,7 @@ report bugs, or submit feature ideas for this Quick Start.
 </table>
 </div>
 <div class="paragraph text-left">
-<p>This Quick Start was created by Example Company Name, Ltd. in collaboration with Amazon Web Services (AWS). <a href="http://aws.amazon.com/quickstart/" target="_blank" rel="noopener">Quick Starts</a> are automated reference deployments that use AWS CloudFormation templates to deploy key technologies on AWS, following AWS best practices.</p>
+<p>This Quick Start was created by IBM in collaboration with Amazon Web Services (AWS). <a href="http://aws.amazon.com/quickstart/" target="_blank" rel="noopener">Quick Starts</a> are automated reference deployments that use AWS CloudFormation templates to deploy key technologies on AWS, following AWS best practices.</p>
 </div>
 </div>
 </div>
@@ -860,10 +870,16 @@ report bugs, or submit feature ideas for this Quick Start.
 <h2 id="_overview">Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This Quick Start reference deployment guide provides step-by-step instructions for deploying Example Product Name on the AWS Cloud.</p>
+<p>This Quick Start reference deployment guide provides step-by-step instructions for deploying IBM Cloud Pak for Security on the AWS Cloud.</p>
 </div>
 <div class="paragraph">
-<p>This Quick Start is for users who &lt;target audience and usage scenario&gt;</p>
+<p>Customers with Cloud Pak for Security gain security insights with a unified console that provides visibility and analytics across IBM and 3rd party security tools, data, and clouds. They can take action faster with built-in AI and automation that simplify operations and streamline responses to save time and lower risk.</p>
+</div>
+<div class="paragraph">
+<p>Security analysts may leverage the Data Explorer application to run federated investigations to fully understand the context and true impact of any security incident, risk, or threat.</p>
+</div>
+<div class="paragraph">
+<p>Threat Analysts can leverage the Threat Intelligence Insights application to prioritize threats based on relevance, severity, penetration, impact and actual environmental sightings, and identify threats active in your environment and streamline the response to potential threats.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -880,10 +896,10 @@ Amazon may share user-deployment information with the AWS Partner that collabora
 </div>
 </div>
 <div class="sect1">
-<h2 id="_example_product_name_on_aws">Example Product Name on AWS</h2>
+<h2 id="_ibm_cloud_pak_for_security_on_aws">IBM Cloud Pak for Security on AWS</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>&lt;Describe how the software works on AWS.&gt;</p>
+<p>IBM Cloud Pak for Security is a platform to more quickly integrate your existing security teams and tools to generate deeper insights into threats and risks, orchestrate actions and automate responses — all while leaving your data where it is.</p>
 </div>
 </div>
 </div>
@@ -919,19 +935,11 @@ After you deploy the Quick Start, <a href="https://docs.aws.amazon.com/awsaccoun
 <h2 id="_software_licenses">Software licenses</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>These two paragraphs provide an example of the details you can provide. Provide links as appropriate.</p>
+<p>To use IBM Cloud Pak for Security on AWS you need to use your existing Cloud Pak for Security entitlement.</p>
 </div>
 <div class="paragraph">
-<p>Example content below:</p>
-</div>
-<div class="paragraph">
-<p><em>&lt;license information&gt;This Quick Start requires a license for Example Product Name. To use the Quick Start in your production environment, sign up for a license at &lt;link&gt;. When you launch the Quick Start, place the license key in an S3 bucket and specify its location.</em></p>
-</div>
-<div class="paragraph">
-<p><em>If you don’t have a license, the Quick Start deploys with a trial license. The trial license gives you &lt;n&gt; days of free usage in a non-production environment. After this time, you can upgrade to a production license by following the instructions at &lt;link&gt;.</em></p>
-</div>
-<div class="paragraph">
-<p><em>&lt;AMI information&gt;The Quick Start requires a subscription to the Amazon Machine Image (AMI) for Example Product Name, which is available from <a href="https://aws.amazon.com/marketplace/" target="_blank" rel="noopener">AWS Marketplace</a>. Additional pricing, terms, and conditions may apply. For instructions, see <a href="#step-2.-subscribe-to-the-software-ami">step 2</a> in the deployment section.</em></p>
+<p>For Cloud Pak for Security product and pricing information, or to use your existing entitlements, contact your IBM sales representative at +1 (877) 426-3774 or online at <a href="https://www.ibm.com/products/cloud-pak-for-security" target="_blank" rel="noopener">IBM Cloud Pak for Security</a>.
+For more information about licensing terms, see the <a href="https://ibm.biz/Bdqt9u" target="_blank" rel="noopener">software license agreement</a>.</p>
 </div>
 </div>
 </div>
@@ -940,14 +948,14 @@ After you deploy the Quick Start, <a href="https://docs.aws.amazon.com/awsaccoun
 <div class="sectionbody">
 <div class="paragraph">
 <p>Deploying this Quick Start for a new virtual private cloud (VPC) with
-default parameters builds the following <em>Example Product Name</em> environment in the
+default parameters builds the following <em>Cloud Pak for Security</em> environment in the
 AWS Cloud.</p>
 </div>
 <div id="architecture1" class="imageblock">
 <div class="content">
-<a class="image" href="images/architecture_diagram.png"><img src="images/architecture_diagram.png" alt="Architecture" width="648" height="439"></a>
+<a class="image" href="images/architecture_diagram.png"><img src="images/architecture_diagram.png" alt="Architecture" width="750" height="508"></a>
 </div>
-<div class="title">Figure 1. Quick Start architecture for <em>Example Product Name</em> on AWS</div>
+<div class="title">Figure 1. Quick Start architecture for <em>Cloud Pak for Security</em> on AWS</div>
 </div>
 <div class="paragraph">
 <p>As shown in Figure 1, the Quick Start sets up the following:</p>
@@ -955,17 +963,14 @@ AWS Cloud.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>A highly available architecture that spans two Availability Zones.*</p>
+<p>A highly available architecture that spans one or three Availability Zones.*</p>
 </li>
 <li>
 <p>A VPC configured with public and private subnets, according to AWS
 best practices, to provide you with your own virtual network on AWS.*</p>
 </li>
-</ul>
-</div>
-<div class="paragraph">
+<li>
 <p>In the public subnets:</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
@@ -978,14 +983,44 @@ Shell (SSH) access to EC2 instances in public and private subnets.*</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>In the private subnets:
-* &lt;describe any additional components&gt;.</p>
+</li>
+<li>
+<p>In the private subnets:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenShift Container Platform (OCP) master nodes in up to three Availability Zones</p>
+</li>
+<li>
+<p>OCP compute nodes that host the Cloud Pak for Security capabilities</p>
+</li>
+<li>
+<p>Elastic Block Storage disks that are mounted on the compute nodes for container persistent data</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>A Classic Load Balancer spanning the public subnets for accessing Cloud Pak for Security from a web browser.</p>
+</li>
+<li>
+<p>A Network Load Balancer spanning the public subnets for routing external OpenShift application programming interface (API) traffic to the OCP master instances.</p>
+</li>
+<li>
+<p>A Network Load Balancer spanning the private subnets for routing internal OpenShift application programming interface (API) traffic to the OCP master instances.</p>
+</li>
+<li>
+<p>Amazon Route 53 as your public Domain Name System (DNS) for resolving domain names of the IBM Cloud Pak for Security management console and applications deployed on the cluster.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>*The template that deploys the Quick Start into an existing VPC skips
 the components marked by asterisks and prompts you for your existing VPC
 configuration.</p>
+</div>
+<div class="paragraph">
+<p>The Cloud Pak for Security components run as containers on the OpenShift compute nodes, and build on a range of common platform and operational services that underpin all IBM Cloud Paks.</p>
 </div>
 </div>
 </div>
@@ -995,16 +1030,18 @@ configuration.</p>
 <div class="sect2">
 <h3 id="_specialized_knowledge">Specialized knowledge</h3>
 <div class="paragraph">
-<p>This deployment guide requires a moderate level of familiarity with
-AWS services. If you’re new to AWS, visit the
-<a href="https://aws.amazon.com/getting-started/" target="_blank" rel="noopener">Getting Started Resource Center</a>
-and the <a href="https://aws.amazon.com/training/">AWS Training and Certification
-website</a>. These sites provide materials for learning how to design,
-deploy, and operate your infrastructure and applications on the AWS
-Cloud.</p>
+<p>This deployment requires a moderate level of familiarity with AWS services. If you’re new to AWS, visit <a href="https://aws.amazon.com/getting-started/" target="_blank" rel="noopener">Getting Started with AWS</a> and <a href="https://aws.amazon.com/training/" target="_blank" rel="noopener">Training and Certification</a>. These sites provide materials for learning how to design, deploy, and operate your infrastructure and applications on the AWS Cloud.</p>
 </div>
 <div class="paragraph">
-<p>This Quick Start assumes familiarity with &lt;knowledge expectations&gt;.</p>
+<p>This Quick Start assumes familiarity with IBM Cloud Pak for Security and RedHat OpenShift.</p>
+</div>
+<div class="paragraph">
+<p>For Red Hat OpenShift installation requirements, see <a href="https://docs.openshift.com/container-platform/4.4/welcome/index.html" target="_blank" rel="noopener">Planning your installation</a>.
+For Cloud Pak for Security requirements, see <a href="https://www.ibm.com/support/knowledgecenter/SSGT7J_20.3/install/sysreqs.html" target="_blank" rel="noopener">System requirements for Cloud Pak for Security</a>.
+<a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/4.4/html/architecture/architecture-rhcos" target="_blank" rel="noopener">Red Hat Enterprise Linux CoreOS (RHCOS)</a> is used for the OpenShift EC2 instances in this deployment.</p>
+</div>
+<div class="paragraph">
+<p>For more information on IBM Cloud Pak for Security, see <a href="https://www.ibm.com/support/knowledgecenter/en/SSTDPP_1.4.0/platform/docs/kc_welcome_scp.html" target="_blank" rel="noopener">IBM Cloud Pak for Security Version 1.4.0</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1040,35 +1077,35 @@ Cloud.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">VPCs</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;n&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Elastic IP addresses</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;n&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">AWS Identity and Access Management (IAM) security groups</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;n&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IAM users</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IAM roles</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;n&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Auto Scaling groups</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;n&gt;</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Application Load Balancers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;n&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Classic Load Balancers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Network Load Balancers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;n&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;type&gt; instances</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;n&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2 Instances</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
 </tr>
 </tbody>
 </table>
@@ -1076,17 +1113,7 @@ Cloud.</p>
 <div class="sect3">
 <h4 id="_supported_regions">Supported Regions</h4>
 <div class="paragraph">
-<p>The following Regions are currently supported by this Quick Start.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><em>us-east-1 (N. Virginia)</em> (EXAMPLE)</p>
-</li>
-<li>
-<p><em>us-east-2 (Ohio)</em> (EXAMPLE)</p>
-</li>
-</ul>
+<p>This deployment includes 3 Availability Zones, which isn’t currently supported in all AWS Regions. For a current list of supported Regions, see <a href="https://aws.amazon.com/about-aws/global-infrastructure/regions_az/" target="_blank" rel="noopener">Regions and Availability Zones</a> in the AWS documentation.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1119,19 +1146,36 @@ Certain Regions are available on an opt-in basis. See <a href="https://docs.aws.
 <div class="sect3">
 <h4 id="_prepare_your_aws_account">Prepare your AWS account</h4>
 <div class="paragraph">
-<p><em>Describe any setup required in the AWS account prior to template launch</em></p>
+<p>Ensure your AWS account has the proper permissions settings to install OpenShift via IPI.</p>
+</div>
+<div class="paragraph">
+<p>For reference to permissions necessary see: <a href="https://docs.openshift.com/container-platform/4.4/installing/installing_aws/installing-aws-account.html#installation-aws-permissions_installing-aws-account" target="_blank" rel="noopener">Required AWS permissions</a>.
+This Quick Start creates a new IAM user with <code>AdministratorAccess</code> policy attached.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_prepare_your_example_company_name_ltd_account">Prepare your Example Company Name, Ltd. account</h4>
+<h4 id="_sign_up_for_a_red_hat_subscription">Sign up for a Red Hat Subscription</h4>
 <div class="paragraph">
-<p><em>Describe any setup required in the partner portal/account prior to template launch</em></p>
+<p>This Quick Start requires a Red Hat subscription. During the deployment of the Quick Start, you’ll need to provide your <a href="https://cloud.redhat.com/openshift/install/aws/installer-provisioned" target="_blank" rel="noopener">OpenShift Installer Provisioned Infrastructure pull secret</a>.</p>
+</div>
+<div class="paragraph">
+<p>If you don’t have an Red Hat account, you can register on the Red Hat website. (Note that registration may require a non-personal email address). To procure a 60-day evaluation license for OpenShift, follow the instructions at <a href="https://www.redhat.com/en/technologies/cloud-computing/openshift/try-it" target="_blank" rel="noopener">Evaluate Red Hat OpenShift Container Platform</a>.</p>
+</div>
+<div class="paragraph">
+<p>The <a href="https://cloud.redhat.com/openshift/install/aws/installer-provisioned" target="_blank" rel="noopener">OpenShift pull secret</a> should be uploaded to an S3 bucket. The Quick Start will pull this secret file from the specified S3 bucket location to provision the cluster.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_cloud_pak_for_security_subscription">Cloud Pak for Security Subscription</h4>
+<div class="paragraph">
+<p>The Quick Start requires an entitlement key to allow you to access the Cloud Pak for Security content.
+You can acquire your entitlement key from <a href="https://myibm.ibm.com/products-services/containerlibrary" target="_blank" rel="noopener">IBM Container Library</a>.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_prepare_for_the_deployment">Prepare for the deployment</h4>
 <div class="paragraph">
-<p><em>Describe any preparation required to complete the product build, such as obtaining licenses or placing files in S3</em></p>
+<p>Ensure you have a domain name to use for OpenShift in Amazon Route53: <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-register.html" target="_blank" rel="noopener">Registering a new domain</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1142,15 +1186,15 @@ Certain Regions are available on an opt-in basis. See <a href="https://docs.aws.
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Deploy Example Product Name into a new VPC (end-to-end deployment)</strong>. This option builds a new AWS environment consisting of the VPC, subnets, NAT gateways, security groups, bastion hosts, and other infrastructure components. It then deploys Example Product Name into this new VPC.</p>
+<p><strong>Deploy Cloud Pak for Security into a new VPC (end-to-end deployment)</strong>. This option builds a new AWS environment consisting of the VPC, subnets, NAT gateways, security groups, bastion hosts, and other infrastructure components. It then deploys Cloud Pak for Security into this new VPC.</p>
 </li>
 <li>
-<p><strong>Deploy Example Product Name into an existing VPC</strong>. This option provisions Example Product Name in your existing AWS infrastructure.</p>
+<p><strong>Deploy Cloud Pak for Security into an existing VPC</strong>. This option provisions Cloud Pak for Security in your existing AWS infrastructure.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>The Quick Start provides separate templates for these options. It also lets you configure Classless Inter-Domain Routing (CIDR) blocks, instance types, and Example Product Name settings, as discussed later in this guide.</p>
+<p>The Quick Start provides separate templates for these options. It also lets you configure Classless Inter-Domain Routing (CIDR) blocks, instance types, and Cloud Pak for Security settings, as discussed later in this guide.</p>
 </div>
 </div>
 </div>
@@ -1200,11 +1244,11 @@ You are responsible for the cost of the AWS services used while running this Qui
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="http://qs_launch_link" target="_blank" rel="noopener">Deploy Example Product Name into a new VPC on AWS</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="http://qs_launch_link" target="_blank" rel="noopener">Deploy Cloud Pak for Security into a new VPC on AWS</a></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><a href="http://qs_template_link" target="_blank" rel="noopener">View template</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="http://qs_launch_link" target="_blank" rel="noopener">Deploy Example Product Name into an existing VPC on AWS</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="http://qs_launch_link" target="_blank" rel="noopener">Deploy Cloud Pak for Security into an existing VPC on AWS</a></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><a href="http://qs_template_link" target="_blank" rel="noopener">View template</a></p></td>
 </tr>
 </tbody>
@@ -1216,7 +1260,7 @@ You are responsible for the cost of the AWS services used while running this Qui
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-If you’re deploying Example Product Name into an existing VPC, make sure that your VPC has two private subnets in different Availability Zones for the workload instances, and that the subnets aren’t shared. This Quick Start doesn’t support <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html" target="_blank" rel="noopener">shared subnets</a>. These subnets require <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html" target="_blank" rel="noopener">NAT gateways</a> in their route tables, to allow the instances to download packages and software without exposing them to the internet.
+If you’re deploying Cloud Pak for Security into an existing VPC, make sure that your VPC has two private subnets in different Availability Zones for the workload instances, and that the subnets aren’t shared. This Quick Start doesn’t support <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html" target="_blank" rel="noopener">shared subnets</a>. These subnets require <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html" target="_blank" rel="noopener">NAT gateways</a> in their route tables, to allow the instances to download packages and software without exposing them to the internet.
 </td>
 </tr>
 </table>
@@ -1225,12 +1269,12 @@ If you’re deploying Example Product Name into an existing VPC, make sure that 
 <p>Also, make sure that the domain name option in the DHCP options is configured as explained in the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html" target="_blank" rel="noopener">Amazon VPC documentation</a>. You provide your VPC settings when you launch the Quick Start.</p>
 </div>
 <div class="paragraph">
-<p>Each deployment takes about 30 minutes / 1 hour to complete.</p>
+<p>Each deployment takes about 90 minutes to complete.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic" start="2">
 <li>
-<p>Check the AWS Region that’s displayed in the upper-right corner of the navigation bar, and change it if necessary. This is where the network infrastructure for Example Product Name will be built. The template is launched in the us-east-1 Region by default.</p>
+<p>Check the AWS Region that’s displayed in the upper-right corner of the navigation bar, and change it if necessary. This is where the network infrastructure for Cloud Pak for Security will be built. The template is launched in the us-east-1 Region by default.</p>
 </li>
 </ol>
 </div>
@@ -1244,9 +1288,219 @@ If you’re deploying Example Product Name into an existing VPC, make sure that 
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>In the following tables, parameters are listed by category and described separately for the deployment options. When you finish reviewing and customizing the parameters, choose <strong>Next</strong>.</p>
+<div class="olist arabic">
+<ol class="arabic" start="5">
+<li>
+<p>On the <strong>Configure stack options</strong> page, you can <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html" target="_blank" rel="noopener">specify tags</a> (key-value pairs) for resources in your stack and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html" target="_blank" rel="noopener">set advanced options</a>. When you’re finished, choose <strong>Next</strong>.</p>
+</li>
+<li>
+<p>On the <strong>Review</strong> page, review and confirm the template settings. Under <strong>Capabilities</strong>, select the two check boxes to acknowledge that the template creates IAM resources and might require the ability to automatically expand macros.</p>
+</li>
+<li>
+<p>Choose <strong>Create stack</strong> to deploy the stack.</p>
+</li>
+<li>
+<p>Monitor the status of the stack. When the status is <strong>CREATE_COMPLETE</strong>, the Cloud Pak for Security deployment is ready.</p>
+</li>
+<li>
+<p>Use the values displayed in the <strong>Outputs</strong> tab for the stack, as shown in <a href="#cfn_outputs">Figure 2</a>, to view the created resources.</p>
+</li>
+</ol>
 </div>
+<div id="cfn_outputs" class="imageblock">
+<div class="content">
+<a class="image" href="images/cfn_outputs.png"><img src="images/cfn_outputs.png" alt="cfn_outputs" width="100%" height="100%"></a>
+</div>
+<div class="title">Figure 2. Cloud Pak for Security outputs after successful deployment</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_dns_record">Create DNS record</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before you can test the deployment, you need to add one DNS record to your hosted zone in Amazon Route 53. Go to Amazon Route 53 console,
+choose the hosted zone corresponding to  the domain name that you specified as the <code>DomainName</code> parameter. Choose <strong>Create Record</strong>,
+then pick Simple routing policy, then choose <strong>Define simple record</strong> as shown in <a href="#postDeploy1">Figure 3</a>.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The record name must match the <code>CPSFQDN</code> parameter input you passed when creating the stack.</p>
+</li>
+<li>
+<p>The record type should be a CNAME.</p>
+</li>
+<li>
+<p>The value of the record should be <code>cp-console.apps.ClusterName.DomainName</code>, where <code>ClusterName</code> and <code>DomainName</code> were passed as input parameters.</p>
+<div id="postDeploy1" class="imageblock">
+<div class="content">
+<a class="image" href="images/create-dns-record.png"><img src="images/create-dns-record.png" alt="DNS Record" width="648" height="439"></a>
+</div>
+<div class="title">Figure 3. Create DNS record for <code>CPSFQDN</code> parameter</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_test_the_deployment">Test the deployment</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After you have completed the <a href="#_create_dns_record">create DNS record step</a> above, navigate to the <strong>CP4SWebClientURL</strong> output of the root stack as shown in <a href="#cfn_outputs">Figure 2</a>.</p>
+</li>
+<li>
+<p>A new tab opens in your browser. You see either the Cloud Pak for Security web client login page or a warning from your browser that the HTTPS connection is not safe. By default, the public key infrastructure (PKI) certificate that is created for the Cloud Pak for Security cluster is self-signed, which causes the unsafe connection warning from your browser.</p>
+</li>
+<li>
+<p>Log in to the Cloud Pak for Security web client by choosing <strong>Default authentication</strong>, and then using the default user <code>platform-admin</code> and the admin password you supplied when creating the stack. If you did not supply a password, you can retrieve it from the <strong>CP4SSecret</strong> secret stored in AWS Secrets Manager.</p>
+</li>
+<li>
+<p>Once you log in, the welcome page is displayed as shown in <a href="#testStep1">Figure 4</a>.</p>
+<div id="testStep1" class="imageblock">
+<div class="content">
+<a class="image" href="images/cloud-pak-security-welcome-page.png"><img src="images/cloud-pak-security-welcome-page.png" alt="CP4S welcome page" width="972" height="702"></a>
+</div>
+<div class="title">Figure 4. Welcome page for Cloud Pak for Security web client</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_post_deployment_steps">Post deployment steps</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before using CP4S, you need to define users and connect the platform to data sources in your environment following the instructions in the <a href="https://www.ibm.com/support/knowledgecenter/SSTDPP_1.1.0/docs/security-pak/postinstallation.html" target="_blank" rel="noopener">IBM Knowledge Center</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_security">Security</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>IBM Cloud Pak for Security connects to various data sources using <em>data connectors</em> it is in your best interest to ensure that only trusted priveleged users have access to both the data sources on the Cloud Pak for Security console or the OpenShift console.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_other_useful_information">Other useful information</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>IBM Cloud Pak for Security has a simple static LDAP (openLDAP and phpLDAPadmin) configured user system. We recommend that you connect your own LDAP server to IBM Common Services to better support your long term use of the product. For further assistance please see <a href="https://www.ibm.com/support/knowledgecenter/en/SSTDPP_1.4.0/platform/docs/security-pak/ldap-connect.html" target="_blank" rel="noopener">Configuration LDAP authentication</a> for details.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_faq">FAQ</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q.</strong> Where can I get my RedHat pull-secret from?</p>
+</div>
+<div class="paragraph">
+<p><strong>A.</strong> Visit: <a href="https://cloud.redhat.com/openshift/install/aws/installer-provisioned" class="bare">https://cloud.redhat.com/openshift/install/aws/installer-provisioned</a></p>
+</div>
+<div class="paragraph">
+<p><strong>Q.</strong> Where can I get my IBM private registry password?</p>
+</div>
+<div class="paragraph">
+<p><strong>A.</strong> Visit: <a href="https://myibm.ibm.com/products-services/containerlibrary" class="bare">https://myibm.ibm.com/products-services/containerlibrary</a></p>
+</div>
+<div class="paragraph">
+<p><strong>Q.</strong> I encountered a <strong>CREATE_FAILED</strong> error when I launched the Quick Start.</p>
+</div>
+<div class="paragraph">
+<p><strong>A.</strong> If AWS CloudFormation fails to create the stack, we recommend that you relaunch the template with <strong>Rollback on failure</strong> set to <strong>Disabled</strong>. (This setting is under <strong>Advanced</strong> in the AWS CloudFormation console, <strong>Options</strong> page.) With this setting, the stack’s state is retained and the instance is left running, so you can troubleshoot the issue. (For Windows, look at the log files in %ProgramFiles%\Amazon\EC2ConfigService and C:\cfn\log.)</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+When you set <strong>Rollback on failure</strong> to <strong>Disabled</strong>, you continue to incur AWS charges for this stack. Please make sure to delete the stack when you finish troubleshooting.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For additional information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html" target="_blank" rel="noopener">Troubleshooting AWS CloudFormation</a> on the AWS website.</p>
+</div>
+<div class="paragraph">
+<p><strong>Q.</strong> I encountered a size limitation error when I deployed the AWS CloudFormation templates.</p>
+</div>
+<div class="paragraph">
+<p><strong>A.</strong> We recommend that you launch the Quick Start templates from the links in this guide or from another S3 bucket. If you deploy the templates from a local copy on your computer or from a location other than an S3 bucket, you might encounter template size limitations. For more information about AWS CloudFormation quotas, see the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html" target="_blank" rel="noopener">AWS documentation</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_troubleshooting">Troubleshooting</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_installation_of_the_product">Installation of the product</h3>
+<div class="paragraph">
+<p>When bootstrapping is complete all dependencies needed to run automation to deploy the desired product should be in place. From here the bootstrap will run the products automation to deploy. First OpenShift is installed using the openshift-install IPI followed by Cloud Pak for Security using in-house built automation.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_logs">Logs</h3>
+<div class="paragraph">
+<p>Various log files are generated and it&#8217;s good to have a reference on where/what they are.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>/ibm/logs/icp4s_install.log</strong> - STDOUT of the openshift-install IPI</p>
+</li>
+<li>
+<p><strong>/ibm/cp4s_install_logs.log</strong> - STDOUT of the Cloud Pak for Security install scripts</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_logging_into_the_cloud_pak_for_security_console">Logging into the Cloud Pak for Security console</h3>
+<div class="paragraph">
+<p>If you are experiencing issues logging into the console for Cloud Pak for Security the most likely error could be incorrect LDAP configuration.</p>
+</div>
+<div class="paragraph">
+<p>To redeploy the openLDAP and phpLDAPadmin package that comes with this QuickStart simply log onto the EC2 BootNode instance and navigate to the /ibm directory.</p>
+</div>
+<div class="paragraph">
+<p>You will see a folder called <strong>cp4s-openldap-master</strong> edit the <strong>playbook.yml</strong> file in this directory and redeploy</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">ansible-playbook -i hosts playbook.yml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the deployment fails you might need to remove the old LDAP helm deployment before attempting to deploy again</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">helm3 delete cp4s-openldap -n default</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You must have an account named <strong>platform-admin</strong> in the LDAP configuration within the <strong>playbook.yml</strong> file</p>
+</div>
+<div class="paragraph">
+<p>For additional troubleshooting, visit <a href="https://www.ibm.com/support/knowledgecenter/en/SSTDPP_1.4.0/platform/docs/security-pak/troubleshooting.html" target="_blank" rel="noopener">Troubleshooting</a> in Cloud Pak for Security documentation.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_parameter_reference">Parameter reference</h2>
+<div class="sectionbody">
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1259,7 +1513,6 @@ Region</code>, and <code>Quick Start S3 key prefix</code>. Changing these parame
 </td>
 </tr>
 </table>
-</div>
 </div>
 <div class="sect2">
 <h3 id="_parameters_for_deploying_into_a_new_vpc">Parameters for deploying into a new VPC</h3>
@@ -1870,107 +2123,6 @@ Region</code>, and <code>Quick Start S3 key prefix</code>. Changing these parame
 </tr>
 </tbody>
 </table>
-<div class="olist arabic">
-<ol class="arabic" start="5">
-<li>
-<p>On the <strong>Configure stack options</strong> page, you can <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html" target="_blank" rel="noopener">specify tags</a> (key-value pairs) for resources in your stack and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html" target="_blank" rel="noopener">set advanced options</a>. When you’re finished, choose <strong>Next</strong>.</p>
-</li>
-<li>
-<p>On the <strong>Review</strong> page, review and confirm the template settings. Under <strong>Capabilities</strong>, select the two check boxes to acknowledge that the template creates IAM resources and might require the ability to automatically expand macros.</p>
-</li>
-<li>
-<p>Choose <strong>Create stack</strong> to deploy the stack.</p>
-</li>
-<li>
-<p>Monitor the status of the stack. When the status is <strong>CREATE_COMPLETE</strong>, the Example Product Name deployment is ready.</p>
-</li>
-<li>
-<p>Use the values displayed in the <strong>Outputs</strong> tab for the stack, as shown in <a href="#cfn_outputs">Example Product Name outputs after successful deployment</a>, to view the created resources.</p>
-</li>
-</ol>
-</div>
-<div id="cfn_outputs" class="imageblock">
-<div class="content">
-<a class="image" href="images/cfn_outputs.png"><img src="images/cfn_outputs.png" alt="cfn_outputs" width="648" height="439"></a>
-</div>
-<div class="title">Figure 2. Example Product Name outputs after successful deployment</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_test_the_deployment">Test the deployment</h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="_post_deployment_steps">Post deployment steps</h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="_best_practices_for_using_example_product_name_on_aws">Best practices for using Example Product Name on AWS</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><em>Add any best practices for using the software.</em></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_security">Security</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><em>Add any security-related information.</em></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_other_useful_information">Other useful information</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><em>Add any other details that will help the customer use the software on AWS.</em></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_faq">FAQ</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Q.</strong> I encountered a <strong>CREATE_FAILED</strong> error when I launched the Quick Start.</p>
-</div>
-<div class="paragraph">
-<p><strong>A.</strong> If AWS CloudFormation fails to create the stack, we recommend that you relaunch the template with <strong>Rollback on failure</strong> set to <strong>Disabled</strong>. (This setting is under <strong>Advanced</strong> in the AWS CloudFormation console, <strong>Options</strong> page.) With this setting, the stack’s state is retained and the instance is left running, so you can troubleshoot the issue. (For Windows, look at the log files in %ProgramFiles%\Amazon\EC2ConfigService and C:\cfn\log.)</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-When you set <strong>Rollback on failure</strong> to <strong>Disabled</strong>, you continue to incur AWS charges for this stack. Please make sure to delete the stack when you finish troubleshooting.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>For additional information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html" target="_blank" rel="noopener">Troubleshooting AWS CloudFormation</a> on the AWS website.</p>
-</div>
-<div class="paragraph">
-<p><strong>Q.</strong> I encountered a size limitation error when I deployed the AWS CloudFormation templates.</p>
-</div>
-<div class="paragraph">
-<p><strong>A.</strong> We recommend that you launch the Quick Start templates from the links in this guide or from another S3 bucket. If you deploy the templates from a local copy on your computer or from a location other than an S3 bucket, you might encounter template size limitations. For more information about AWS CloudFormation quotas, see the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html" target="_blank" rel="noopener">AWS documentation</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_troubleshooting">Troubleshooting</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>&lt;Steps for troubleshooting the deployment go here.&gt;</p>
 </div>
 </div>
 </div>
@@ -2016,7 +2168,7 @@ and to share your customizations with others.</p>
 <p class="footer-text">
 <!-- We can use document attributes: -->
 <!-- Generated with Asciidoctor v2.0.10. -->
-<a href="https://aws.amazon.com/privacy/">Privacy</a> | <a href="https://aws.amazon.com/terms/">Site terms</a> | &copy; 2020, Amazon Web Services, Inc. or its affiliates and Example Company Name, Ltd.. All rights reserved.
+<a href="https://aws.amazon.com/privacy/">Privacy</a> | <a href="https://aws.amazon.com/terms/">Site terms</a> | &copy; 2020, Amazon Web Services, Inc. or its affiliates and IBM. All rights reserved.
 </p>
 </body>
 </html>
