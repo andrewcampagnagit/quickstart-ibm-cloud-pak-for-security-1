@@ -1323,23 +1323,35 @@ If you’re deploying Cloud Pak for Security into an existing VPC, make sure tha
 <h2 id="_create_dns_record">Create DNS record</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Before you can test the deployment, add one DNS record to your hosted zone in Amazon Route 53:
-. Go to Amazon Route 53 console.
-. Choose the hosted zone that corresponds to the domain name that you specified as the <code>DomainName</code> parameter. . .. Choose <strong>Create Record</strong>.
-. Pick the Simple routing policy, and then choose <strong>Define simple record</strong>, as shown in <a href="#postDeploy1">Figure 3</a>.
-. Confirm that the record name matches the <code>CPSFQDN</code> parameter input that you passed when creating the stack.
-. Confirm that the record type is CNAME.
-. For the value of the record, specify <code>cp-console.apps.ClusterName.DomainName</code>, where <code>ClusterName</code> and <code>DomainName</code> were passed as input parameters.</p>
+<p>Before you can test the deployment, add one DNS record to your hosted zone in Amazon Route 53:</p>
 </div>
-<div class="paragraph">
-<p>+
-:xrefstyle: short</p>
-</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to Amazon Route 53 console.</p>
+</li>
+<li>
+<p>Choose the hosted zone that corresponds to the domain name that you specified as the <code>DomainName</code> parameter. . .. Choose <strong>Create Record</strong>.</p>
+</li>
+<li>
+<p>Pick the Simple routing policy, and then choose <strong>Define simple record</strong>, as shown in <a href="#postDeploy1">Figure 3</a>.</p>
+</li>
+<li>
+<p>Confirm that the record name matches the <code>CPSFQDN</code> parameter input that you passed when creating the stack.</p>
+</li>
+<li>
+<p>Confirm that the record type is CNAME.</p>
+</li>
+<li>
+<p>For the value of the record, specify <code>cp-console.apps.ClusterName.DomainName</code>, where <code>ClusterName</code> and <code>DomainName</code> were passed as input parameters.</p>
 <div id="postDeploy1" class="imageblock">
 <div class="content">
 <a class="image" href="images/create-dns-record.png"><img src="images/create-dns-record.png" alt="DNS Record" width="648" height="439"></a>
 </div>
 <div class="title">Figure 3. Create DNS record for <code>CPSFQDN</code> parameter</div>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
